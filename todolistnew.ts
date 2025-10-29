@@ -1,6 +1,12 @@
 const prompt = require("prompt-sync")({ sigint: true });
 
-let tareas: any[];
+interface tarea{
+
+titulo : String;
+descripcion : String;
+dificultad : String;
+estado: String;
+}
 
 function menu():void {
     console.log("\n== LISTA DE TAREAS : ==");
@@ -50,7 +56,7 @@ function buscarTarea():void {
     }
 }
 
-function editarDescripcion() {
+function editarDescripcion():void {
     let tituloBuscar = prompt("Ingrese el título de la tarea a editar: ");
     let tarea = tareas.find(t => t.titulo.toLowerCase() === tituloBuscar.toLowerCase());
 
@@ -62,7 +68,7 @@ function editarDescripcion() {
     }
 }
 
-function cambiarEstado() {
+function cambiarEstado():void {
     let tituloBuscar = prompt("Ingrese el título de la tarea a modificar: ");
     let tarea = tareas.find(t => t.titulo.toLowerCase() === tituloBuscar.toLowerCase());
 
